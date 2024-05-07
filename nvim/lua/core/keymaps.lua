@@ -21,7 +21,7 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 vim.keymap.set('t', '<C-`>', '<C-\\><C-n>')
 
 -- clear search --
-vim.keymap.set('n', '<leader>N', vim.cmd.nohl )
+vim.keymap.set('n', '<leader>n', vim.cmd.nohl )
 
 -- yank and paste clipboard --
 vim.keymap.set('n', '<leader>y', '"*y')
@@ -51,7 +51,7 @@ vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
 
 -- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<leader>p", function() harpoon:list():prev() end)
-vim.keymap.set("n", "<leader>n", function() harpoon:list():next() end)
+-- vim.keymap.set("n", "<leader>pp", function() harpoon:list():prev() end)
+-- vim.keymap.set("n", "<leader>nn", function() harpoon:list():next() end)
 
 vim.keymap.set('n', '<leader>dd', '<cmd> lua vim.diagnostic.open_float() <cr>')
