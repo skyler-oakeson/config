@@ -6,17 +6,19 @@ return {
     lazy = false,
     priority = 1000,
     config=function()
-    require('github-theme').setup({
-      palettes = {
-        all = {
-          red = {
-            base = '#8e1519',
-            bright = '#ee0000',
+      require('github-theme').setup({
+        options = {
+          darken = {
+            floats = true,
+            sidebars = {
+              enabled = false
+            }
           }
+        },
+        groups = {
         }
-      }
-    })
-    vim.cmd[[colorscheme github_dark_high_contrast]]
+      })
+      vim.cmd[[colorscheme github_dark_default]]
     end
   },
   { 'joshdick/onedark.vim' },

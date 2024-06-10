@@ -17,6 +17,9 @@ glyph_offset = { x = 0, y = 3 }
 history = 10000
 multiplier = 3
 
+[cursor]
+custom_cursor_colors = true
+
 # #MoonFly
 # [colors]
 # draw_bold_text_with_bright_colors = true
@@ -55,35 +58,65 @@ multiplier = 3
 # text = "#080808"
 
 # (Github Dark High Contrast) Colors for Alacritty
+# [colors.primary]
+# background = '0x0a0c10'
+# foreground = '0xf0f3f6'
+#
+# [colors.cursor]
+# text = '0x0a0c10'
+# cursor = '0xf0f3f6'
+#
+# [colors.normal]
+# black = '0x7a828e'
+# red = '0xff9492'
+# green = '0x26cd4d'
+# yellow = '0xf0b72f'
+# blue = '0x71b7ff'
+# magenta = '0xcb9eff'
+# cyan = '0x39c5cf'
+# white = '0xd9dee3'
+#
+# # Bright colors
+# [colors.bright]
+# black = '0x9ea7b3'
+# red = '0xffb1af'
+# green = '0x4ae168'
+# yellow = '0xf7c843'
+# blue = '0x91cbff'
+# magenta = '0xcb9eff'
+# cyan = '0x39c5cf'
+# white = '0xd9dee3'
+
+# Github Dark Default
 [colors.primary]
-background = '0x0a0c10'
-foreground = '0xf0f3f6'
+background = '0x0d1117'
+foreground = '0xe6edf3'
 
 # Cursor colors
 #
 # These will only be used when the `custom_cursor_colors` field is set to `true`.
 [colors.cursor]
-text = '0x0a0c10'
-cursor = '0xf0f3f6'
+text = '0x0d1117'
+cursor = '0xe6edf3'
 
-  # Normal colors
+# Normal colors
 [colors.normal]
-black = '0x7a828e'
-red = '#ee0000'
-green = '0x26cd4d'
-yellow = '0xf0b72f'
-blue = '0x71b7ff'
-magenta = '0xcb9eff'
+black = '0x484f58'
+red = '0xff7b72'
+green = '0x3fb950'
+yellow = '0xd29922'
+blue = '0x58a6ff'
+magenta = '0xbc8cff'
 cyan = '0x39c5cf'
-white = '0xd9dee3'
+white = '0xb1bac4'
 
-  # Bright colors
+# Bright colors
 [colors.bright]
-black = '0x9ea7b3'
-red = '0xffb1af'
-green = '0x4ae168'
-yellow = '0xf7c843'
-blue = '0x91cbff'
-magenta = '0xcb9eff'
+black = '0x6e7681'
+red = '0xffa198'
+green = '0x56d364'
+yellow = '0xe3b341'
+blue = '0x79c0ff'
+magenta = '0xbc8cff'
 cyan = '0x39c5cf'
-white = '0xd9dee3'
+white = '0xb1bac4'
