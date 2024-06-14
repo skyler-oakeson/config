@@ -3,10 +3,15 @@ return {
     lazy = false,
     priority = 1000,
     config=function()
-      require('github-theme').setup({})
+      require('github-theme').setup({
+        groups = {
+          github_dark_default = {
+            FloatBorder = {fg = "#e6edf3"},
+            NormalFloat = {bg = "#0d1117"}
+          }
+        }
+      })
       vim.cmd[[colorscheme github_dark_default]]
-      vim.api.nvim_set_hl(0, "FloatBorder", {fg = "#e6edf3"})
-      vim.api.nvim_set_hl(0, "NormalFloat", {bg = "#0d1117"})
     end
   },
   { 'bluz71/vim-moonfly-colors'},
