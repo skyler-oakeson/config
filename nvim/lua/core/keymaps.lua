@@ -42,8 +42,6 @@ vim.keymap.set('n', '<leader>tb', '<cmd>Gitsigns toggle_current_line_blame<cr>')
 -- harpoon commands --
 local harpoon = require("harpoon")
 
-local toggle_opts = 
-
 harpoon:setup()
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<leader>b", function() harpoon.ui:toggle_quick_menu(harpoon:list(), {
@@ -57,9 +55,3 @@ vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end)
 vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
-
--- Toggle previous & next buffers stored within Harpoon list
--- vim.keymap.set("n", "<leader>pp", function() harpoon:list():prev() end)
--- vim.keymap.set("n", "<leader>nn", function() harpoon:list():next() end)
-
-vim.keymap.set('n', '<leader>dd', '<cmd> lua vim.diagnostic.open_float() <cr>')
