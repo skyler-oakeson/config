@@ -1,12 +1,6 @@
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
-require('mason.settings').set({
-  ui = {
-    border = 'single'
-  }
-})
-
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 end)
@@ -18,15 +12,13 @@ lsp.ensure_installed({
     'pyright'
 })
 
-vim.diagnostic.config({
-    virtual_text = true,
-    signs = true,
-    update_in_insert = false,
-    underline = false,
-    severity_sort = false,
-    float = {
-      border = 'single',
-    },
+lsp.nvim_workspace()
+lsp.setup()
+
+require('mason.settings').set({
+  ui = {
+    border = 'single'
+  }
 })
 
 require('lspconfig').pylsp.setup {
@@ -39,7 +31,7 @@ require('lspconfig').pylsp.setup {
     }
 }
 
-cmp = require('cmp')
+local cmp = require('cmp')
 cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
@@ -48,7 +40,7 @@ cmp.setup({
     ['<C-y>'] = cmp.mapping.confirm({select = false}),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-d>'] = cmp.mapping.scroll_docs(4), 
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
     ['<C-k>'] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item({behavior = 'insert'})
@@ -71,13 +63,31 @@ cmp.setup({
   },
   window = {
     completion = cmp.config.window.bordered({
-      border = 'single'
+      border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
     }),
     documentation = cmp.config.window.bordered({
-      border = 'single'
+      border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
     })
   }
 })
 
-lsp.nvim_workspace()
-lsp.setup()
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    update_in_insert = false,
+    underline = false,
+    severity_sort = false,
+    float = {
+      border = 'single',
+    },
+})
+
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {border = 'single'}
+)
+
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  {border = 'single'}
+)
