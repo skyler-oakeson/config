@@ -35,6 +35,7 @@ local cmp = require('cmp')
 cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
+    {name = 'buffer'},
   },
   mapping = {
     ['<C-y>'] = cmp.mapping.confirm({select = false}),
@@ -76,7 +77,7 @@ vim.diagnostic.config({
     signs = true,
     update_in_insert = false,
     underline = false,
-    severity_sort = false,
+    severity_sort = true,
     float = {
       border = 'single',
     },
