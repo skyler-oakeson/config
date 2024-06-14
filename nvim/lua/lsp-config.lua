@@ -21,10 +21,12 @@ vim.diagnostic.config({
     update_in_insert = false,
     underline = false,
     severity_sort = false,
-    float = true,
+    float = {
+      border = 'single',
+    },
 })
 
-require 'lspconfig'.pylsp.setup {
+require('lspconfig').pylsp.setup {
     settings = {
         pylsp = {
             plugins = {

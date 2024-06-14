@@ -48,7 +48,7 @@ harpoon:setup()
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<leader>b", function() harpoon.ui:toggle_quick_menu(harpoon:list(), {
   border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-  title_pos = "center", ui_width_ratio = 0.40, })
+  title=" Harpoon ", title_pos = "center", ui_width_ratio = 0.40, })
 end)
 vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end)
