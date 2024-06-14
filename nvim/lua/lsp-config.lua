@@ -1,6 +1,12 @@
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
+require('mason.settings').set({
+  ui = {
+    border = 'single'
+  }
+})
+
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 end)
@@ -11,9 +17,6 @@ lsp.ensure_installed({
     'lua_ls',
     'pyright'
 })
-
-lsp.nvim_workspace()
-lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true,
@@ -35,3 +38,6 @@ require('lspconfig').pylsp.setup {
         }
     }
 }
+
+lsp.nvim_workspace()
+lsp.setup()
