@@ -39,5 +39,45 @@ require('lspconfig').pylsp.setup {
     }
 }
 
+cmp = require('cmp')
+cmp.setup({
+  sources = {
+    {name = 'nvim_lsp'},
+  },
+  mapping = {
+    ['<C-y>'] = cmp.mapping.confirm({select = false}),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4), 
+    ['<C-k>'] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_prev_item({behavior = 'insert'})
+      else
+        cmp.complete()
+      end
+    end),
+    ['<C-j>'] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_next_item({behavior = 'insert'})
+      else
+        cmp.complete()
+      end
+    end),
+  },
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  window = {
+    completion = cmp.config.window.bordered({
+      border = 'single'
+    }),
+    documentation = cmp.config.window.bordered({
+      border = 'single'
+    })
+  }
+})
+
 lsp.nvim_workspace()
 lsp.setup()
