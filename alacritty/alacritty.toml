@@ -3,12 +3,13 @@ opacity = 1
 decorations = "Buttonless"
 padding = { x = 16, y = 16 }
 dynamic_padding = true
+option_as_alt = "Both"
 
 [font]
-normal.family = "JetBrainsMono Nerd Font Mono"
-bold.family = "JetBrainsMono Nerd Font Mono"
-italic.family = "JetBrainMono Nerd Font Mono"
-bold_italic.family = "JetBrainsMono Nerd Font Mono"
+normal.family = "JetBrainsMono Nerd Font"
+bold.family = "JetBrainsMono Nerd Font"
+italic.family = "JetBrainMono Nerd Font"
+bold_italic.family = "JetBrainsMono Nerd Font"
 size = 16.0
 offset = { x = 0, y = 3 }
 glyph_offset = { x = 0, y = 3 }
