@@ -8,17 +8,20 @@ vim.keymap.set('n', '<leader>fa', "<cmd>lua require'telescope.builtin'.find_file
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>fr', builtin.registers, {})
+vim.keymap.set('n', '<leader>fz', builtin.current_buffer_fuzzy_find, {})
 vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>' )
 vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>' )
 vim.keymap.set('n', '<leader>fm', '<cmd>Telescope harpoon marks<cr>' )
+
+-- lsp keymap --
+vim.keymap.set('n', '<leader>lf', '<cmd>LspZeroFormat<cr>')
 
 -- focus windows --
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
-
-vim.keymap.set('t', '<C-`>', '<C-\\><C-n>')
 
 -- clear search --
 vim.keymap.set('n', '<leader>n', vim.cmd.nohl )
@@ -46,8 +49,8 @@ harpoon:setup()
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 vim.keymap.set("n", "<leader>b", function() harpoon.ui:toggle_quick_menu(harpoon:list(), {
   border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-  title_pos = "center", 
-  ui_width_ratio = 0.40, 
+  title_pos = "center",
+  ui_width_ratio = 0.40,
   title = " Harpoon "
 })
 end)

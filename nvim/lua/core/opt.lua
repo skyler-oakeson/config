@@ -5,3 +5,4 @@ vim.o.shiftwidth = 2
 vim.wo.number = true
 vim.opt.termguicolors = true
 vim.opt.cursorlineopt = 'number'
+vim.opt.cursorline = true
