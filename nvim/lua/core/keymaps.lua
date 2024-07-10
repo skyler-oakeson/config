@@ -10,9 +10,9 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fr', builtin.registers, {})
 vim.keymap.set('n', '<leader>fz', builtin.current_buffer_fuzzy_find, {})
-vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>' )
-vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>' )
-vim.keymap.set('n', '<leader>fm', '<cmd>Telescope harpoon marks<cr>' )
+vim.keymap.set('n', '<leader>fm', builtin.marks, {})
+vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>')
+vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>')
 
 -- lsp keymap --
 vim.keymap.set('n', '<leader>lf', '<cmd>LspZeroFormat<cr>')
@@ -24,7 +24,7 @@ vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- clear search --
-vim.keymap.set('n', '<leader>n', vim.cmd.nohl )
+vim.keymap.set('n', '<leader>n', vim.cmd.nohl)
 
 -- yank and paste clipboard --
 vim.keymap.set('n', '<leader>y', '"*y')
@@ -58,3 +58,4 @@ vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end)
 vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
+vim.keymap.set("n", "<leader>5", function() harpoon:list():select(5) end)
